@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/* reset */
+:root {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  --cyan: hsl(179, 62%, 43%);
+  --brigh-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+/* body */
+
+body {
+  background-color: var(--light-gray);
+  padding: 1rem;
+}
+
+/* community */
+.community {
+  padding: 1rem;
+  background-color: white;
+}
+
+.community h1 {
+  margin-top: 0px;
+  font-size: 1.5rem;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.community p:nth-of-type(1) {
+  margin-bottom: 0px;
+  color: var(--brigh-yellow);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.community p:nth-of-type(2) {
+  margin-top: 0.5rem;
+  color: var(--grayish-blue);
+  line-height: 1.6;
+}
+
+/* subscription */
+
+.subscription {
+  padding: 2rem;
+  background-color: var(--cyan);
+  color: white;
+}
+
+.subscription > h1 {
+  font-size: 1.5rem;
+  margin-top: 0px;
+}
+
+.price h1 {
+  margin: 0px;
+  padding-right: 1rem;
+}
+
+.price p {
+  opacity: 0.7;
+}
+
+.price {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  height: fit-content;
+}
+
+.subscription button {
+  width: 90%;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  padding: 0.8em 0em;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--brigh-yellow);
+  font-weight: 700;
+  color: white;
+  box-shadow: 0px 0px 5px hsl(0, 1%, 56%);
+  cursor: pointer;
+}
+
+.subscription button:hover {
+  background-color: hsl(71, 73%, 48%);
+  transition: background-color 300ms ease;
+}
+
+/* why-us */
+
+.why-us {
+  padding: 2rem;
+  background-color: var(--cyan);
+  opacity: 0.65;
+}
+
+.why-us h1 {
+  font-size: 1.5rem;
+  margin-top: 0px;
+  color: white;
+}
+
+.why-us ul {
+  line-height: 1.6;
+  padding-left: 0px;
+  list-style-type: none;
+  color: var(--light-gray);
+  font-weight: 100;
+  opacity: 0.9;
+}
+
+/* desktop layout */
+
+@media (min-width: 800px) {
+  body {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 650px;
+    display: grid;
+    grid-template-areas:
+      "community community"
+      "subscription why-us";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .community {
+    padding: 3rem 3rem 1rem 3rem;
+    grid-area: community;
+  }
+
+  .subscription {
+    padding: 2rem;
+    grid-area: subscription;
+  }
+
+  .subscription > h1 {
+    font-size: 1.2rem;
+  }
+
+  .why-us {
+    grid-area: why-us;
+  }
+
+  .why-us > h1 {
+    font-size: 1.2rem;
+  }
+
+  .why-us ul {
+    font-size: 0.8rem;
+    color: white;
+    opacity: 0.7;
+  }
+}
